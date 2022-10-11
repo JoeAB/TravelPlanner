@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\js\ReactDist\" />
+  </ItemGroup>
+
 </Project>
