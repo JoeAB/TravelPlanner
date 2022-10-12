@@ -44,6 +44,10 @@ export default function Map({ mapDataSource }) {
 
                                         destName = prompt("Please enter destination name", "");
 
+                                        if (destName == null) {
+                                            return;
+                                        }
+
                                         // 'unproject' the SVG coords to get lat and long                 
                                         handleCoordinates(projection.invert(clickCoordsInsideSvg));
                                     };
