@@ -22,7 +22,7 @@ export default function Planner() {
         <>
             <Container>
                 <Row>
-                    <Col className="float-right">
+                    <Col>
                         <Button onClick={() => { handleAdd() }}>Add Trip</Button>
                     </Col>
                 </Row>
