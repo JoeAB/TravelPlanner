@@ -1,6 +1,6 @@
 ﻿var React = require('react');
 const { default: TripPane } = require('./TripPane')
-import { Button } from 'react-bootstrap';
+import { Button, Container, Col, Row } from 'react-bootstrap';
 import { useState } from "react";
 
 
@@ -20,15 +20,20 @@ export default function Planner() {
     };
     return (
         <>
-            <Button variant="danger" onClick={() => { handleAdd() }}>Add Trip</Button>
-            {trips.map((element, index) => {
-                return (
-                    <div key={index}>
-                        <TripPane mapDataSource={geoUrl} />
-                    </div>
-                );
-            })}
-
+            <Container>
+                <Row>
+                    <Col className="float-right">
+                        <Button onClick={() => { handleAdd() }}>Add Trip</Button>
+                    </Col>
+                </Row>
+                {trips.map((element, index) => {
+                    return (
+                        <div key={index}>
+                            <TripPane mapDataSource={geoUrl} index={index} />
+                        </div>
+                    );
+                })}
+            </Container>
         </>
     )
 }

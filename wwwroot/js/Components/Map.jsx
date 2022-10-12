@@ -18,6 +18,7 @@ export default function Map({ mapDataSource }) {
                     {({ geographies, projection }) =>
                         geographies
                             .map((geo) => {
+                                var destName = "";
                                 const onGeoEventFactory = (handleCoordinates) => {
                                     const gPath = geoPath().projection(projection);
 
@@ -41,6 +42,8 @@ export default function Map({ mapDataSource }) {
                                             geoY + (cy / adjustScale)
                                         ];
 
+                                        destName = prompt("Please enter destination name", "");
+
                                         // 'unproject' the SVG coords to get lat and long                 
                                         handleCoordinates(projection.invert(clickCoordsInsideSvg));
                                     };
@@ -57,7 +60,7 @@ export default function Map({ mapDataSource }) {
                                                 ...markers,
                                                 {
                                                     markerOffset: -30,
-                                                    name: "Marker",
+                                                    name: destName,
                                                     coordinates
                                                 }
                                             ];
