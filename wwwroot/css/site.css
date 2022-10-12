@@ -73,3 +73,8 @@ body {
 .cardHeader{
     cursor: pointer;
 }
+
+.markerCaption {
+    font-family: "system-ui";
+    font-size: 6px;
+}
