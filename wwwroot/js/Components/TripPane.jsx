@@ -9,7 +9,10 @@ import { useState } from "react";
 
 export default function TripPane({mapDataSource, index}) {
     const [open, setOpen] = useState(false);
-    const [tripName, setTripName] = useState('Trip ' +index);
+    const [tripName, setTripName] = useState('Trip ' + index);
+    const [startDate, setStartDate] = useState(Date.now());
+    const [endDate, setEndDate] = useState(Date.now() +1);
+
     return (
         <>
             <Card>
@@ -34,13 +37,24 @@ export default function TripPane({mapDataSource, index}) {
                                     <Col>
                                         <Form.Group controlId="startDate">
                                             <Form.Label>Start Date</Form.Label>
-                                            <Form.Control type="date" />
+                                            <Form.Control
+                                                value={startDate}
+                                                type="date"
+                                                onChange={(e) => {
+                                                    setStartDate(e.target.value);
+                                                }}
+                                                max={endDate} />
                                         </Form.Group>
                                     </Col>
                                     <Col>
                                         <Form.Group controlId="endDate">
                                             <Form.Label>End Date</Form.Label>
-                                            <Form.Control type="date"/>
+                                            <Form.Control type="date"
+                                                value={endDate}
+                                                onChange={(e) => {
+                                                    setEndDate(e.target.value);
+                                                }}
+                                                min={startDate} />
                                         </Form.Group>
                                     </Col>
                                 </Row>

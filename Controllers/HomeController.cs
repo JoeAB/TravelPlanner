@@ -22,6 +22,7 @@ namespace WebApp_OpenIDConnect_DotNet.Controllers
 
         public IActionResult Index()
         {
+            ViewData.Add("UID", HttpContext.User.Identity.Name);
             return View();
         }
 

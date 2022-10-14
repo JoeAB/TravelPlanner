@@ -5,4 +5,4 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 import Planner from "./Components/Planner";
-ReactDOM.render(<Planner />, document.getElementById('app'));
+ReactDOM.render(<Planner userName={ _user} />, document.getElementById('app'));

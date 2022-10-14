@@ -9,7 +9,7 @@ import { useState } from "react";
 const geoUrl =
     "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json"
 
-export default function Planner() {
+export default function Planner({ userName}) {
 
     const [trips, setTrips] = useState([]);
 
