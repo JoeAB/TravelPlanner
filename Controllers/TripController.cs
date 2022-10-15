@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TravelPlanner.Data;
 
 namespace TravelPlanner.Controllers
 {
@@ -11,10 +12,16 @@ namespace TravelPlanner.Controllers
     [ApiController]
     public class TripController : ControllerBase
     {
-        public String Trips()
+        private TravelPlannerContext _db;
+        public TripController(TravelPlannerContext db)
+        {
+            _db = db;
+        }
+
+        public ActionResult Trips(String account)
         {
             
-            return String.Empty;
+            return Ok();
         }
     }
 }

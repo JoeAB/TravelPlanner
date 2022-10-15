@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using TravelPlanner.Data;
+
 namespace WebApp_OpenIDConnect_DotNet
 {
     public class Startup
@@ -42,6 +44,8 @@ namespace WebApp_OpenIDConnect_DotNet
             });
            services.AddRazorPages()
                 .AddMicrosoftIdentityUI();
+
+            services.AddTransient<TravelPlannerContext>(x => new TravelPlannerContext(Configuration.GetSection("DBConnectionString").Value));
         }
         // </ Configure_service_ref_for_docs_ms >
 

@@ -14,7 +14,6 @@ export default function Planner({ userName}) {
     const [trips, setTrips] = useState([]);
 
     const handleAdd = () => {
-        // 👇️ push to end of state array
         setTrips(trips => [...trips, { caption: 'new' }]);
 
     };
